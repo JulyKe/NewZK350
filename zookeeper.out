@@ -1,0 +1,125 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/build/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+2017-06-15 20:35:43,949 [myid:] - INFO  [main:QuorumPeerConfig@109] - Reading configuration from: conf/zoo1.cfg
+2017-06-15 20:35:43,951 [myid:] - WARN  [main:VerifyingFileFactory@55] - conf/zoo1.cfg is relative. Prepend ./ to indicate that you're sure!
+2017-06-15 20:35:43,952 [myid:] - WARN  [main:VerifyingFileFactory@55] - data/data1 is relative. Prepend ./ to indicate that you're sure!
+2017-06-15 20:35:43,952 [myid:] - WARN  [main:VerifyingFileFactory@55] - log/log1 is relative. Prepend ./ to indicate that you're sure!
+2017-06-15 20:35:43,954 [myid:] - WARN  [main:QuorumPeerConfig@445] - No server failure will be tolerated. You need at least 3 servers.
+2017-06-15 20:35:43,956 [myid:1] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
+2017-06-15 20:35:43,956 [myid:1] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 0
+2017-06-15 20:35:43,956 [myid:1] - INFO  [main:DatadirCleanupManager@101] - Purge task is not scheduled.
+2017-06-15 20:35:43,964 [myid:1] - INFO  [main:QuorumPeerMain@136] - Starting quorum peer
+2017-06-15 20:35:43,969 [myid:1] - INFO  [main:NIOServerCnxnFactory@670] - Configuring NIO connection handler with 10s sessionless connection timeout, 1 selector thread(s), 8 worker threads, and 64 kB direct buffers.
+2017-06-15 20:35:43,972 [myid:1] - INFO  [main:NIOServerCnxnFactory@683] - binding to port /0.0.0.0:2182
+2017-06-15 20:35:43,990 [myid:1] - INFO  [main:Slf4jLog@67] - Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2017-06-15 20:35:44,008 [myid:1] - INFO  [main:QuorumPeer@1205] - Local sessions disabled
+2017-06-15 20:35:44,008 [myid:1] - INFO  [main:QuorumPeer@1216] - Local session upgrading disabled
+2017-06-15 20:35:44,008 [myid:1] - INFO  [main:QuorumPeer@1185] - tickTime set to 2000
+2017-06-15 20:35:44,008 [myid:1] - INFO  [main:QuorumPeer@1227] - minSessionTimeout set to 4000
+2017-06-15 20:35:44,009 [myid:1] - INFO  [main:QuorumPeer@1238] - maxSessionTimeout set to 40000
+2017-06-15 20:35:44,009 [myid:1] - INFO  [main:QuorumPeer@1253] - initLimit set to 10
+2017-06-15 20:35:44,017 [myid:1] - INFO  [main:QuorumPeer@671] - currentEpoch not found! Creating with a reasonable default of 0. This should only happen when you are upgrading your installation
+2017-06-15 20:35:44,022 [myid:1] - INFO  [main:QuorumPeer@686] - acceptedEpoch not found! Creating with a reasonable default of 0. This should only happen when you are upgrading your installation
+2017-06-15 20:35:44,026 [myid:1] - INFO  [main:Slf4jLog@67] - jetty-6.1.26
+2017-06-15 20:35:44,044 [myid:1] - WARN  [main:Slf4jLog@76] - failed SocketConnector@0.0.0.0:8080: java.net.BindException: Address already in use (Bind failed)
+2017-06-15 20:35:44,044 [myid:1] - WARN  [main:Slf4jLog@76] - failed Server@4678c730: java.net.BindException: Address already in use (Bind failed)
+2017-06-15 20:35:44,046 [myid:1] - WARN  [main:QuorumPeer@650] - Problem starting AdminServer
+org.apache.zookeeper.server.admin.AdminServer$AdminServerException: Problem starting AdminServer on port 8080, command URL /commands
+	at org.apache.zookeeper.server.admin.JettyAdminServer.start(JettyAdminServer.java:90)
+	at org.apache.zookeeper.server.quorum.QuorumPeer.start(QuorumPeer.java:648)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.runFromConfig(QuorumPeerMain.java:171)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.initializeAndRun(QuorumPeerMain.java:120)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.main(QuorumPeerMain.java:79)
+Caused by: java.net.BindException: Address already in use (Bind failed)
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.ServerSocket.bind(ServerSocket.java:375)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.mortbay.jetty.bio.SocketConnector.newServerSocket(SocketConnector.java:80)
+	at org.mortbay.jetty.bio.SocketConnector.open(SocketConnector.java:73)
+	at org.mortbay.jetty.AbstractConnector.doStart(AbstractConnector.java:283)
+	at org.mortbay.jetty.bio.SocketConnector.doStart(SocketConnector.java:147)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.Server.doStart(Server.java:235)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.apache.zookeeper.server.admin.JettyAdminServer.start(JettyAdminServer.java:85)
+	... 4 more
+org.apache.zookeeper.server.admin.AdminServer$AdminServerException: Problem starting AdminServer on port 8080, command URL /commands
+2017-06-15 20:35:44,051 [myid:1] - INFO  [QuorumPeerListener:QuorumCnxManager$Listener@550] - My election bind port: /127.0.0.1:3891
+2017-06-15 20:35:44,058 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:QuorumPeer@913] - LOOKING
+2017-06-15 20:35:44,059 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:FastLeaderElection@888] - New election. My id =  1, proposed zxid=0x0
+2017-06-15 20:35:44,064 [myid:1] - INFO  [WorkerReceiver[myid=1]:FastLeaderElection@682] - Notification: 2 (message format version), 1 (n.leader), 0x0 (n.zxid), 0x1 (n.round), LOOKING (n.state), 1 (n.sid), 0x0 (n.peerEPoch), LOOKING (my state)0 (n.config version)
+2017-06-15 20:35:44,066 [myid:1] - INFO  [WorkerReceiver[myid=1]:FastLeaderElection@682] - Notification: 2 (message format version), 0 (n.leader), 0x0 (n.zxid), 0x1 (n.round), LOOKING (n.state), 0 (n.sid), 0x0 (n.peerEPoch), LOOKING (my state)0 (n.config version)
+2017-06-15 20:35:44,066 [myid:1] - INFO  [WorkerReceiver[myid=1]:FastLeaderElection@682] - Notification: 2 (message format version), 1 (n.leader), 0x0 (n.zxid), 0x1 (n.round), LOOKING (n.state), 0 (n.sid), 0x0 (n.peerEPoch), LOOKING (my state)0 (n.config version)
+2017-06-15 20:35:44,268 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:MBeanRegistry@119] - Unregister MBean [org.apache.ZooKeeperService:name0=ReplicatedServer_id1,name1=replica.1,name2=LeaderElection]
+2017-06-15 20:35:44,269 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:QuorumPeer@1001] - LEADING
+2017-06-15 20:35:44,288 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Leader@62] - TCP NoDelay set to: true
+2017-06-15 20:35:44,288 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Leader@82] - zookeeper.leader.maxConcurrentSnapshots = 10
+2017-06-15 20:35:44,289 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Leader@84] - zookeeper.leader.maxConcurrentSnapshotTimeout = 5
+2017-06-15 20:35:44,311 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:zookeeper.version=3.5.0-alpha--1, built on 06/16/2017 01:28 GMT
+2017-06-15 20:35:44,312 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:host.name=huanke-ThinkPad-X1-Carbon-4th
+2017-06-15 20:35:44,312 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:java.version=1.8.0_121
+2017-06-15 20:35:44,312 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:java.vendor=Oracle Corporation
+2017-06-15 20:35:44,312 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:java.home=/usr/lib/jvm/java-8-openjdk-amd64/jre
+2017-06-15 20:35:44,313 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:java.class.path=/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/classes:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/slf4j-log4j12-1.7.5.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/slf4j-api-1.7.5.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/servlet-api-2.5-20081211.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/netty-3.7.0.Final.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/log4j-1.2.16.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/jline-2.11.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/jetty-util-6.1.26.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/jetty-6.1.26.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/javacc.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/jackson-mapper-asl-1.9.11.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/jackson-core-asl-1.9.11.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../build/lib/commons-cli-1.2.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/slf4j-log4j12-1.7.5.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/slf4j-api-1.7.5.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/servlet-api-2.5-20081211.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/netty-3.7.0.Final.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/log4j-1.2.16.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/jline-2.11.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/jetty-util-6.1.26.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/jetty-6.1.26.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/javacc.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/jackson-mapper-asl-1.9.11.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/jackson-core-asl-1.9.11.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../lib/commons-cli-1.2.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../zookeeper-3.5.0-alpha.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../src/java/lib/ivy-2.2.0.jar:/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha/bin/../conf:
+2017-06-15 20:35:44,313 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:java.library.path=/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+2017-06-15 20:35:44,313 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:java.io.tmpdir=/tmp
+2017-06-15 20:35:44,313 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:java.compiler=<NA>
+2017-06-15 20:35:44,314 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:os.name=Linux
+2017-06-15 20:35:44,314 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:os.arch=amd64
+2017-06-15 20:35:44,314 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:os.version=4.4.0-75-generic
+2017-06-15 20:35:44,314 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:user.name=huanke
+2017-06-15 20:35:44,314 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:user.home=/home/huanke
+2017-06-15 20:35:44,315 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:user.dir=/home/huanke/Programs/TEST/zookeeper-3.5.0-alpha
+2017-06-15 20:35:44,315 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:os.memory.free=205MB
+2017-06-15 20:35:44,315 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:os.memory.max=889MB
+2017-06-15 20:35:44,315 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Environment@109] - Server environment:os.memory.total=232MB
+2017-06-15 20:35:44,317 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:ZooKeeperServer@781] - minSessionTimeout set to 4000
+2017-06-15 20:35:44,317 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:ZooKeeperServer@790] - maxSessionTimeout set to 40000
+2017-06-15 20:35:44,317 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:ZooKeeperServer@152] - Created server with tickTime 2000 minSessionTimeout 4000 maxSessionTimeout 40000 datadir log/log1/version-2 snapdir data/data1/version-2
+2017-06-15 20:35:44,320 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Leader@409] - LEADING - LEADER ELECTION TOOK - 50
+2017-06-15 20:35:44,323 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:FileTxnSnapLog@298] - Snapshotting: 0x0 to data/data1/version-2/snapshot.0
+2017-06-15 20:35:44,332 [myid:1] - INFO  [LearnerHandler-/127.0.0.1:33722:LearnerHandler@361] - Follower sid: 0 : info : 127.0.0.1:2890:3890:participant;0.0.0.0:2180
+2017-06-15 20:35:44,341 [myid:1] - INFO  [LearnerHandler-/127.0.0.1:33722:LearnerHandler@659] - Synchronizing with Follower sid: 0 maxCommittedLog=0x0 minCommittedLog=0x0 lastProcessedZxid=0x0 peerLastZxid=0x0
+2017-06-15 20:35:44,341 [myid:1] - INFO  [LearnerHandler-/127.0.0.1:33722:LearnerHandler@703] - Sending DIFF zxid=0x0 for peer sid: 0
+2017-06-15 20:35:44,356 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:Leader@1243] - Have quorum of supporters, sids: [ [0, 1],[0, 1] ]; starting up and setting last processed zxid: 0x100000000
+2017-06-15 20:35:44,376 [myid:1] - INFO  [QuorumPeer[myid=1]/0:0:0:0:0:0:0:0:2182:CommitProcessor@253] - Configuring CommitProcessor with 4 worker threads.
+2017-06-15 20:35:49,559 [myid:1] - INFO  [NIOServerCxnFactory.AcceptThread:/0.0.0.0:2182:NIOServerCnxnFactory$AcceptThread@296] - Accepted socket connection from /127.0.0.1:35044
+2017-06-15 20:35:49,563 [myid:1] - INFO  [NIOWorkerThread-1:NIOServerCnxn@835] - Processing srvr command from /127.0.0.1:35044
+2017-06-15 20:35:49,564 [myid:1] - INFO  [NIOWorkerThread-1:NIOServerCnxn@1006] - Closed socket connection for client /127.0.0.1:35044 (no session established for client)
+2017-06-15 20:38:13,521 [myid:1] - INFO  [NIOServerCxnFactory.AcceptThread:/0.0.0.0:2182:NIOServerCnxnFactory$AcceptThread@296] - Accepted socket connection from /127.0.0.1:58896
+2017-06-15 20:38:13,528 [myid:1] - INFO  [NIOWorkerThread-2:ZooKeeperServer@872] - Client attempting to establish new session at /127.0.0.1:58896
+2017-06-15 20:38:13,530 [myid:1] - INFO  [SyncThread:1:FileTxnLog@200] - Creating new log file: log.100000001
+2017-06-15 20:38:13,539 [myid:1] - INFO  [CommitProcWorkThread-1:ZooKeeperServer@619] - Established session 0x15cae8ab2ee0000 with negotiated timeout 30000 for client /127.0.0.1:58896
+2017-06-15 20:41:52,259 [myid:1] - WARN  [NIOWorkerThread-6:NIOServerCnxn@368] - Unable to read additional data from client sessionid 0x15cae8ab2ee0000, likely client has closed socket
+2017-06-15 20:41:52,260 [myid:1] - INFO  [NIOWorkerThread-6:MBeanRegistry@119] - Unregister MBean [org.apache.ZooKeeperService:name0=ReplicatedServer_id1,name1=replica.1,name2=Leader,name3=Connections,name4=127.0.0.1,name5=0x15cae8ab2ee0000]
+2017-06-15 20:41:52,260 [myid:1] - INFO  [NIOWorkerThread-6:NIOServerCnxn@1006] - Closed socket connection for client /127.0.0.1:58896 which had sessionid 0x15cae8ab2ee0000
+2017-06-15 20:42:14,002 [myid:1] - INFO  [SessionTracker:ZooKeeperServer@349] - Expiring session 0x15cae8ab2ee0000, timeout of 30000ms exceeded
+2017-06-15 20:42:14,002 [myid:1] - INFO  [SessionTracker:QuorumZooKeeperServer@132] - Submitting global closeSession request for session 0x15cae8ab2ee0000
+2017-06-15 20:42:14,003 [myid:1] - INFO  [ProcessThread(sid:1 cport:-1)::PrepRequestProcessor@676] - Processed session termination for sessionid: 0x15cae8ab2ee0000
+2017-06-15 20:42:27,666 [myid:1] - ERROR [LearnerHandler-/127.0.0.1:33722:LearnerHandler@580] - Unexpected exception causing shutdown while sock still open
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.jute.BinaryInputArchive.readInt(BinaryInputArchive.java:63)
+	at org.apache.zookeeper.server.quorum.QuorumPacket.deserialize(QuorumPacket.java:83)
+	at org.apache.jute.BinaryInputArchive.readRecord(BinaryInputArchive.java:103)
+	at org.apache.zookeeper.server.quorum.LearnerHandler.run(LearnerHandler.java:493)
+2017-06-15 20:42:27,666 [myid:1] - WARN  [RecvWorker:0:QuorumCnxManager$RecvWorker@836] - Connection broken for id 0, my id = 1, error = 
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.zookeeper.server.quorum.QuorumCnxManager$RecvWorker.run(QuorumCnxManager.java:821)
+2017-06-15 20:42:27,667 [myid:1] - WARN  [LearnerHandler-/127.0.0.1:33722:LearnerHandler@595] - ******* GOODBYE /127.0.0.1:33722 ********
+2017-06-15 20:42:27,667 [myid:1] - WARN  [RecvWorker:0:QuorumCnxManager$RecvWorker@839] - Interrupting SendWorker
+2017-06-15 20:42:27,668 [myid:1] - WARN  [SendWorker:0:QuorumCnxManager$SendWorker@753] - Interrupted while waiting for message on queue
+java.lang.InterruptedException
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.reportInterruptAfterWait(AbstractQueuedSynchronizer.java:2014)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2088)
+	at java.util.concurrent.ArrayBlockingQueue.poll(ArrayBlockingQueue.java:418)
+	at org.apache.zookeeper.server.quorum.QuorumCnxManager.pollSendQueue(QuorumCnxManager.java:905)
+	at org.apache.zookeeper.server.quorum.QuorumCnxManager.access$500(QuorumCnxManager.java:62)
+	at org.apache.zookeeper.server.quorum.QuorumCnxManager$SendWorker.run(QuorumCnxManager.java:741)
+2017-06-15 20:42:27,668 [myid:1] - WARN  [SendWorker:0:QuorumCnxManager$SendWorker@762] - Send worker leaving thread  id 0 my id = 1
